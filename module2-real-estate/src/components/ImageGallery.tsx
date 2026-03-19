@@ -56,7 +56,7 @@ export function ImageGallery({ images, propertyTitle }: ImageGalleryProps): Reac
 
   //Estilos base para las miniaturas
   const thumbnailClass =
-    'w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity duration-200';
+    'absolute inset-0 w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity duration-200';
 
   // =========================================================================
   // 2 Imagen
@@ -99,7 +99,7 @@ export function ImageGallery({ images, propertyTitle }: ImageGalleryProps): Reac
       <>
         <div className="grid grid-cols-2 gap-2 h-[400px] rounded-lg overflow-hidden">
           <div
-            className="relative overflow-hidden cursor-pointer"
+            className="relative overflow-hidden cursor-pointer h-full"
             onClick={() => openModal(0)}
             role="button"
             tabIndex={0}
@@ -108,7 +108,7 @@ export function ImageGallery({ images, propertyTitle }: ImageGalleryProps): Reac
             <img src={images[0]} alt={`${propertyTitle} - Principal`} className={thumbnailClass} />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 h-full">
             {images.slice(1).map((img, i) => (
               <div
                 key={i}
